@@ -14,7 +14,8 @@ app.use(cors());
 // app.use('/api/needs', usersRouter);
 
 // MongoClient.connect('mongodb://localhost:27017')
-const url = process.env.MONGODB_URI || "mongodb://localhost:27017";
+// const url = process.env.MONGODB_URI || "mongodb://localhost:27017";
+const url = "mongodb://admin:123456uk@ds053148.mlab.com:53148/heroku_dshp4qwf";
 console.log(`Before connect: url:${url}`);
 MongoClient.connect(url)
   .then((client) => {
