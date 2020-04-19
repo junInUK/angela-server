@@ -14,6 +14,7 @@ app.use(cors());
 
 // MongoClient.connect('mongodb://localhost:27017')
 const url = process.env.MONGODB_URI || "mongodb://localhost:27017";
+console.log(`Before connect: url:${url}`);
 MongoClient.connect(url)
   .then((client) => {
     // const db = client.db('covid_19');
