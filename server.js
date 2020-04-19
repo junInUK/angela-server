@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -25,6 +26,9 @@ MongoClient.connect(url)
   })
   .catch(console.err);
 
-app.listen(3000, function () {
-  console.log(`App running on port ${ this.address().port }`);
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
+  // console.log(`App running on port ${ this.address().port }`);
+  console.log(`App running on port ${port}`);
 });
