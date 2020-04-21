@@ -183,7 +183,7 @@ Set the port to Heroku’s production port. In your app.js file (or sometimes, b
 // At the bottom of app.js or server.js
 const port = process.env.PORT || 3000;
 app.listen(port);
-// the code above should be directly above: 'module.exports = app;'
+// the code above should be directly above: 'module.exports = app;
 ```
 
 ## Push your code up to GitHub:
@@ -192,7 +192,7 @@ app.listen(port);
 $ git add . 
 $ git commit -m “setting up to push to Heroku”
 $ git push origin master
-``
+```
 
 ## Push your code up to Heroku:
 
