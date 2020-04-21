@@ -87,48 +87,41 @@ Read Heroku carefully, you may need a credit card detail to continue. The sandbo
 
 When you were successfully done this, you should see 
 
+![Diagram of mLab](img/mLab.png)
 
+*Diagram of mLab*
 
 
 
 Click mLab MongoDB, you were able to see this, give you the detail of your remote database.
 
+![Diagram of mLab-detail](img/mLab detail.png)
 
-
-
-
-
-
-
-
-
+*Diagram of mLab-detail*
 
 If you haven’t already, make sure your app.js or server.js file has the correct line of code to connect to your production DB:
 
-
-
-// get env variable MONGODB_URI
+## get env variable MONGODB_URI
 
 Make sure your MONGODB_URI is correct with username and password, you can use 
 
-
-
-heroku config:get MONGODB_URI 
+`$ heroku config:get MONGODB_URI` 
 
 to check. 
 
+Sometimes the MONGODB_URI is using default username which is long and not easy to remember, you can add a new database username and set a password. And set the new MONGODB_URI using the new username and password you set. 
 
+You may set the heroku Config Vars using the command below:
+
+`$ heroku config:get MONGODB_URI`
 
 You can use mongo shell to check your username and password ok to connect. 
 
-
-
-mongo ds053148.mlab.com:53148/heroku_dshp4qwf -u <dbuser> -p <dbpassword>
-
-
+`$ mongo ds053148.mlab.com:53148/heroku_dshp4qwf -u <dbuser> -p <dbpassword>`
 
 If there has no authentication problem, you can refactor your connect code. 
 
+```
 // app.js or server.js
 // You may need this line to get the Environment variables
 
@@ -138,17 +131,15 @@ const url = process.env.MONGODB_URI || "mongodb://localhost:27017";
 
 // you may hard code the link, but not recommond 
 
-//const url = "mongodb://admin:123456uk@ds053148.mlab.com:53148/heroku_dshp4qwf";
+//const url = "mongodb://<username>:<password>@ds053148.mlab.com:53148/heroku_dshp4qwf";
 
 MongoClient.connect(url)
 
 .then((client) => {
 
-// const db = client.db('covid_19');
-
 const db = client.db('heroku_dshp4qwf');
 
-const needsCollection = db.collection('needs');
+const needsCollection = db.collection('needs'); //  collection name
 
 const needsRouter = createRouter(needsCollection);
 
@@ -167,79 +158,62 @@ app.listen(port, function () {
 console.log(`App running on port ${port}`);
 
 });
-
+```
 
 Note: you may need to install the dotenv npm package for the above to work correctly:
 
+
 run npm install dotenv or yarn add dotenv
 import dotenv at the top of your app.js / server.js file:
+
+```
 // app.js or server.js
 require('dotenv').config()
 // REST OF YOUR CODE
+```
 
-
-
-
-
-
-Configure your port settings
+## Configure your port settings
 Set the port to Heroku’s production port. In your app.js file (or sometimes, bin/www/server.js file), change your app.listen to the following:
 
+```
 // At the bottom of app.js or server.js
 const port = process.env.PORT || 3000;
 app.listen(port);
 // the code above should be directly above: 'module.exports = app;'
+```
 
+## Push your code up to GitHub:
 
-
-
-
-
-Push your code up to GitHub:
+```
 $ git add . 
 $ git commit -m “setting up to push to Heroku”
 $ git push origin master
+``
 
+## Push your code up to Heroku:
 
+`$ git push heroku master`
 
+## Push your .env variables to Heroku (if you have any):
 
-
-
-Push your code up to Heroku:
-$ git push heroku master
-
-
-
-Push your .env variables to Heroku (if you have any):
 For each env variable, you can push it up using:
 
-$ heroku config:set DATABASE_URI=database_uri_here
+`$ heroku config:set DATABASE_URI=database_uri_here`
+
 Or, if you find it easier, you could go to https://dashboard.heroku.com/apps/YOUR_APP_NAME/settings and provide .env variables via Heroku’s web interface.
-
-
-
-
-
-
 
 That’s it, go check if it worked!
 Cross your fingers and see if it worked by using the command:
 
-$ heroku open 
+`$ heroku open`
+
 🥂🎉🎊🙌🔥 Your app is on the web! 🔥🙌🎊🎉🥂
-
-
-
-
-
 
 Oh no! Are you seeing this page?
 
+![Diagram of heroku-error](img/heroku_error.png)
 
-
-
-
-
+*Diagram of heroku-error*
 
 
 
