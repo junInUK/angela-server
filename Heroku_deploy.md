@@ -85,12 +85,12 @@ Create a database to host your production data:
 
 Read Heroku carefully, you may need a credit card detail to continue. The sandbox may be free but check carefully before you continue. 
 
-When you were successfully done this, you should see 
+When you were successfully done this, you should see the page like this 
 
 ![Diagram of mLab](img/mLab.png)
 
 
-Click mLab MongoDB, you were able to see this, give you the detail of your remote database.
+Click mLab MongoDB, you were able to see the page like this, give you the detail of your remote database.
 
 ![Diagram of mLab-detail](img/mLab_detail.png)
 
@@ -197,14 +197,6 @@ $ git push origin master
 ## Push your code up to Heroku:
 
 `$ git push heroku master`
-
-## Push your .env variables to Heroku (if you have any):
-
-For each env variable, you can push it up using:
-
-`$ heroku config:set DATABASE_URI=database_uri_here`
-
-Or, if you find it easier, you could go to https://dashboard.heroku.com/apps/YOUR_APP_NAME/settings and provide .env variables via Heroku’s web interface.
 
 That’s it, go check if it worked!
 Cross your fingers and see if it worked by using the command:
