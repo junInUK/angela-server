@@ -95,7 +95,7 @@ When you were successfully done this, you should see
 
 Click mLab MongoDB, you were able to see this, give you the detail of your remote database.
 
-![Diagram of mLab-detail](img/mLab detail.png)
+![Diagram of mLab-detail](img/mLab_detail.png)
 
 *Diagram of mLab-detail*
 
