@@ -89,15 +89,11 @@ When you were successfully done this, you should see
 
 ![Diagram of mLab](img/mLab.png)
 
-*Diagram of mLab*
-
-
 
 Click mLab MongoDB, you were able to see this, give you the detail of your remote database.
 
 ![Diagram of mLab-detail](img/mLab_detail.png)
 
-*Diagram of mLab-detail*
 
 If you haven’t already, make sure your app.js or server.js file has the correct line of code to connect to your production DB:
 
@@ -113,7 +109,7 @@ Sometimes the MONGODB_URI is using default username which is long and not easy t
 
 You may set the heroku Config Vars using the command below:
 
-`$ heroku config:get MONGODB_URI`
+`$ heroku config:set MONGODB_URI=mongodb://<username>:<password>@ds053148.mlab.com:53148/heroku_dshp4qwf`
 
 You can use mongo shell to check your username and password ok to connect. 
 
@@ -163,7 +159,14 @@ console.log(`App running on port ${port}`);
 Note: you may need to install the dotenv npm package for the above to work correctly:
 
 
-run npm install dotenv or yarn add dotenv
+run 
+
+`$ npm install dotenv`
+
+or 
+
+`$ yarn add dotenv`
+
 import dotenv at the top of your app.js / server.js file:
 
 ```
@@ -173,6 +176,7 @@ require('dotenv').config()
 ```
 
 ## Configure your port settings
+
 Set the port to Heroku’s production port. In your app.js file (or sometimes, bin/www/server.js file), change your app.listen to the following:
 
 ```
@@ -213,14 +217,12 @@ Oh no! Are you seeing this page?
 
 ![Diagram of heroku-error](img/heroku_error.png)
 
-*Diagram of heroku-error*
-
-
 
 Classic. Almost everybody sees this the first time they push their app to Heroku
 If you see the screen above, run this command:
 
-$ heroku logs --tail
+`$ heroku logs --tail`
+
 Scroll up to the top of the error logs and google them one by one.
 
 If you get stuck and can’t resolve the problem using Google, comment below with your situation and what you’ve already tried and I’ll do my best to help.
