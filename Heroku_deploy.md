@@ -221,11 +221,11 @@ If you get stuck and can’t resolve the problem using Google, comment below wit
 
 ## Reference 
 
-[How to deploy your Node.js / MongoDB app to the web, using Heroku!](https://medium.com/make-school/how-to-deploy-your-node-js-mongodb-app-to-the-web-using-heroku-63d4bccf2675)
+[How to deploy your Node.js / MongoDB app to the web, using Heroku](https://medium.com/make-school/how-to-deploy-your-node-js-mongodb-app-to-the-web-using-heroku-63d4bccf2675)
 
-[Express Tutorial Part 7: Deploying to production!](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment)
+[Express Tutorial Part 7: Deploying to production](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment)
 
-[https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment!](https://devcenter.heroku.com/articles/mean-apps-restful-api#provision-a-mongodb-database)
+[Provision a MongoDB database](https://devcenter.heroku.com/articles/mean-apps-restful-api#provision-a-mongodb-database)
 
-[Heroku连接云端MongoDB的方法!](https://blog.csdn.net/congyihao/article/details/60747447)
+[Heroku连接云端MongoDB的方法](https://blog.csdn.net/congyihao/article/details/60747447)
 
