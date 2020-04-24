@@ -6,7 +6,7 @@ Heroku.
 
 Note: This guide assumes you have already set up git. If you have not, google "How to Set Up Git for an Existing Project"
 
-This article only deploys the backend Node.js + MongoDB to Heroku. If you have a front end app, please see another article.
+This article only deploys the backend Node.js + MongoDB to Heroku. If you have a front end app, please see [How to deploy your vue project to Netlify](https://github.com/junwu1976/angela-client/blob/master/Netlify_deploy).
 
 Make sure you have the file package.json in the root folder of the repo.
 
